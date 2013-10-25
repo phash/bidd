@@ -1,4 +1,4 @@
-package org.wickedsource;
+package de.mroedig.bidd;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,6 +20,10 @@ import org.springframework.security.web.savedrequest.SavedRequest;
 
 public class LoginPage extends WebPage {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2774631644509382007L;
 	private static Logger logger = Logger.getLogger(LoginPage.class);
 
 	public LoginPage(PageParameters parameters) {
@@ -27,6 +31,11 @@ public class LoginPage extends WebPage {
 	}
 
 	private class LoginForm extends Form<Void> {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 7651280096229347917L;
 
 		private transient RequestCache requestCache = new HttpSessionRequestCache();
 
@@ -44,7 +53,8 @@ public class LoginPage extends WebPage {
 
 		@Override
 		protected void onSubmit() {
-			HttpServletRequest servletRequest = (HttpServletRequest) RequestCycle.get().getRequest().getContainerRequest();
+			HttpServletRequest servletRequest = (HttpServletRequest) RequestCycle
+					.get().getRequest().getContainerRequest();
 			String originalUrl = getOriginalUrl(servletRequest.getSession());
 			AuthenticatedWebSession session = AuthenticatedWebSession.get();
 			if (session.signIn(username, password)) {
@@ -61,15 +71,19 @@ public class LoginPage extends WebPage {
 		}
 
 		/**
-		 * Returns the URL the user accessed before he was redirected to the login page. This URL has been stored in the session by spring
+		 * Returns the URL the user accessed before he was redirected to the
+		 * login page. This URL has been stored in the session by spring
 		 * security.
 		 * 
-		 * @return the original URL the user accessed or null if no URL has been stored in the session.
+		 * @return the original URL the user accessed or null if no URL has been
+		 *         stored in the session.
 		 */
 		private String getOriginalUrl(HttpSession session) {
-			// TODO: The following session attribute seems to be null the very first time a user accesses a secured page. Find out why
+			// TODO: The following session attribute seems to be null the very
+			// first time a user accesses a secured page. Find out why
 			// spring security doesn't set this parameter the very first time.
-			SavedRequest savedRequest = (SavedRequest) session.getAttribute("SPRING_SECURITY_SAVED_REQUEST");
+			SavedRequest savedRequest = (SavedRequest) session
+					.getAttribute("SPRING_SECURITY_SAVED_REQUEST");
 			if (savedRequest != null) {
 				return savedRequest.getRedirectUrl();
 			} else {

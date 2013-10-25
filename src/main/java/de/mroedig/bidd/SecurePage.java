@@ -1,4 +1,4 @@
-package org.wickedsource;
+package de.mroedig.bidd;
 
 import org.apache.wicket.markup.html.WebPage;
 

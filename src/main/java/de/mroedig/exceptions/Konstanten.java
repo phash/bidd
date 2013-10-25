@@ -1,0 +1,1453 @@
+
+package de.mroedig.exceptions;
+
+/**
+ * Konstanten
+ */
+public interface Konstanten {
+
+	// ////////////////////
+	// Allgemein
+	// ////////////////////
+	//
+	//
+	/**
+	 * Zahl 0 als Integer
+	 */
+	Integer INTEGER_ZERO = Integer.valueOf(0);
+
+	/**
+	 * Sperrdauer in Minuten
+	 */
+	int SPERRDAUER_IN_MINUTEN_DEFAULT = 10;
+
+	/**
+	 * Landname Bayern
+	 */
+	String LANDNAME_BAYERN = "Bayern";
+
+	/**
+	 * Sperrdauer
+	 */
+	int PAGINATIONSCHRITT = 10;
+
+	// ////////////////////
+	// Security
+	// ////////////////////
+	//
+	//
+	/**
+	 * Präfix Rolle
+	 */
+	String SECURITY_ROLLE_PREFIX = "GROUP_";
+
+	/**
+	 * -
+	 */
+	String SECURITY_ROLLE_ADMINISTRATOR = "ADMINISTRATOR";
+
+	/**
+	 * -
+	 */
+	String SECURITY_ROLLE_WAHLLEITER = "WAHLLEITER";
+
+	/**
+	 * -
+	 */
+	String SECURITY_ROLLE_DATENERFASSUNG = "DATENERFASSUNG";
+
+	/**
+	 * -
+	 */
+	String SECURITY_ROLLE_EXTERNER_BENUTZER = "EXTERNER_BENUTZER";
+
+	/**
+	 * -
+	 */
+	String SECURITY_ROLLE_INFORMATION = "INFORMATION";
+
+	/**
+	 * Präfix Recht
+	 */
+	String SECURITY_RECHT_PREFIX = "ROLE_";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STARTSEITE_INTERN = SECURITY_RECHT_PREFIX
+			+ "STARTSEITE_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STARTSEITE_EXTERN = SECURITY_RECHT_PREFIX
+			+ "STARTSEITE_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_AUSWAEHLEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_AUSWAEHLEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ROLLE_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "ROLLE_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ROLLE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "ROLLE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ROLLE_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "ROLLE_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ROLLE_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "ROLLE_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ROLLE_RECHTE_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "ROLLE_RECHTE_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ROLLE_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "ROLLE_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_PROFIL_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "PROFIL_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_INTERN_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_INTERN_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_INTERN_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_INTERN_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_INTERN_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_INTERN_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_INTERN_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_INTERN_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_INTERN_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_INTERN_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_EXTERN_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_EXTERN_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_EXTERN_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_EXTERN_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_EXTERN_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_EXTERN_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_EXTERN_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_EXTERN_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_EXTERN_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_EXTERN_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_ADMINISTRATOR_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_ADMINISTRATOR_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_ADMINISTRATOR_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_ADMINISTRATOR_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BENUTZER_ADMINISTRATOR_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "BENUTZER_ADMINISTRATOR_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_ANLEGEN = SECURITY_RECHT_PREFIX + "WAHL_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_ZURUECKSETZEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_ZURUECKSETZEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_ENTSPERREN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_ENTSPERREN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLVORSCHLAG_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLVORSCHLAG_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLVORSCHLAG_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLVORSCHLAG_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLVORSCHLAG_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLVORSCHLAG_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLVORSCHLAG_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "WAHLVORSCHLAG_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLVORSCHLAG_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "WAHLVORSCHLAG_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREISVORSCHLAG_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREISVORSCHLAG_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREISVORSCHLAG_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREISVORSCHLAG_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREISVORSCHLAG_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREISVORSCHLAG_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREISVORSCHLAG_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREISVORSCHLAG_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREISVORSCHLAG_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREISVORSCHLAG_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BEWERBER_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "BEWERBER_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BEWERBER_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "BEWERBER_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BEWERBER_ANLEGEN = SECURITY_RECHT_PREFIX
+			+ "BEWERBER_ANLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BEWERBER_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "BEWERBER_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_BEWERBER_LOESCHEN = SECURITY_RECHT_PREFIX
+			+ "BEWERBER_LOESCHEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_FUSSNOTEN_SITZEBERECHNUNG_LISTE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "FUSSNOTEN_SITZEBERECHNUNG_LISTE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_FUSSNOTEN_SITZEBERECHNUNG_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "FUSSNOTEN_SITZEBERECHNUNG_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_FUSSNOTEN_SITZEBERECHNUNG_BEARBEITEN = SECURITY_RECHT_PREFIX
+			+ "FUSSNOTEN_SITZEBERECHNUNG_BEARBEITEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLSTATISTIK_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLSTATISTIK_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_STATUS_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_STATUS_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_LAND_SUMMENSATZ_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "LAND_SUMMENSATZ_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_OEFFNEN = SECURITY_RECHT_PREFIX + "WAHL_OEFFNEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_SCHLIESSEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_SCHLIESSEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_OEFFNEN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_OEFFNEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_SCHLIESSEN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_SCHLIESSEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_OEFFNEN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_OEFFNEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_SCHLIESSEN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_SCHLIESSEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLPRUEFUNG_OEFFNEN = SECURITY_RECHT_PREFIX
+			+ "WAHLPRUEFUNG_OEFFNEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLPRUEFUNG_SCHLIESSEN = SECURITY_RECHT_PREFIX
+			+ "WAHLPRUEFUNG_SCHLIESSEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_NACHWAHL_OEFFNEN = SECURITY_RECHT_PREFIX
+			+ "NACHWAHL_OEFFNEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_NACHWAHL_SCHLIESSEN = SECURITY_RECHT_PREFIX
+			+ "NACHWAHL_SCHLIESSEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_LANDESWAHLAUSSCHUSS = SECURITY_RECHT_PREFIX
+			+ "LANDESWAHLAUSSCHUSS";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_SITZEBERECHNUNG_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "SITZEBERECHNUNG_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_SITZEBERECHNUNG_DURCHFUEHREN = SECURITY_RECHT_PREFIX
+			+ "SITZEBERECHNUNG_DURCHFUEHREN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_SITZEBERECHNUNG_AUSWAEHLEN = SECURITY_RECHT_PREFIX
+			+ "SITZEBERECHNUNG_AUSWAEHLEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_STATUS_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_STATUS_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHLKREIS_SUMMENSATZ_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHLKREIS_SUMMENSATZ_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_STATUS_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_STATUS_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_STIMMKREIS_SUMMENSATZ_KUMULIERT_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "STIMMKREIS_SUMMENSATZ_KUMULIERT_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_ANZEIGEN_INTERN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_ANZEIGEN_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_ANZEIGEN_EXTERN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_ANZEIGEN_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_BEARBEITEN_INTERN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_BEARBEITEN_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_BEARBEITEN_EXTERN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_BEARBEITEN_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_IMPORTIEREN_INTERN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_IMPORTIEREN_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_IMPORTIEREN_EXTERN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_IMPORTIEREN_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_BESTAETIGEN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_BESTAETIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_ZURUECKSETZEN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_ZURUECKSETZEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_ANZEIGEN_INTERN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_ANZEIGEN_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_ANZEIGEN_EXTERN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_ANZEIGEN_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_BEARBEITEN_INTERN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_BEARBEITEN_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_BEARBEITEN_EXTERN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_BEARBEITEN_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_IMPORTIEREN_INTERN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_IMPORTIEREN_INTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_IMPORTIEREN_EXTERN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_IMPORTIEREN_EXTERN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_BESTAETIGEN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_BESTAETIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_ZURUECKSETZEN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_ZURUECKSETZEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_GEBIETSHIERARCHIE = SECURITY_RECHT_PREFIX
+			+ "IMPORT_GEBIETSHIERARCHIE";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_WAHLKREISVORSCHLAEGE_AKTUELLE_WAHL = SECURITY_RECHT_PREFIX
+			+ "IMPORT_WAHLKREISVORSCHLAEGE_AKTUELLE_WAHL";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_WAHLKREISVORSCHLAG_VERGLEICHSWAHL = SECURITY_RECHT_PREFIX
+			+ "IMPORT_WAHLKREISVORSCHLAG_VERGLEICHSWAHL";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_BEWERBER = SECURITY_RECHT_PREFIX
+			+ "IMPORT_BEWERBER";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_ERSTE_SCHNELLMELDUNG_VERGLEICHSWAHL = SECURITY_RECHT_PREFIX
+			+ "IMPORT_ERSTE_SCHNELLMELDUNG_VERGLEICHSWAHL";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_ENDGUELTIGES_ERGEBNIS = SECURITY_RECHT_PREFIX
+			+ "IMPORT_ENDGUELTIGES_ERGEBNIS";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_ERSTE_SCHNELLMELDUNG_TEST = SECURITY_RECHT_PREFIX
+			+ "IMPORT_ERSTE_SCHNELLMELDUNG_TEST";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_IMPORT_ZWEITE_SCHNELLMELDUNG_TEST = SECURITY_RECHT_PREFIX
+			+ "IMPORT_ZWEITE_SCHNELLMELDUNG_TEST";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_RANGFOLGE_NACH_LOSENTSCHEID_FESTLEGEN = SECURITY_RECHT_PREFIX
+			+ "RANGFOLGE_NACH_LOSENTSCHEID_FESTLEGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_GEWAEHLTE_BEWERBER_ERMITTELN = SECURITY_RECHT_PREFIX
+			+ "GEWAEHLTE_BEWERBER_ERMITTELN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_GEWAEHLTE_BEWERBER_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "GEWAEHLTE_BEWERBER_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_EINGANGSHISTORIE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "EINGANGSHISTORIE_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_WAHL_VERLAUF_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "WAHL_VERLAUF_ANZEIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ERSTE_SCHNELLMELDUNG_MUSSFEHLER_BESTAETIGEN = SECURITY_RECHT_PREFIX
+			+ "ERSTE_SCHNELLMELDUNG_MUSSFEHLER_BESTAETIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_ZWEITE_SCHNELLMELDUNG_MUSSFEHLER_BESTAETIGEN = SECURITY_RECHT_PREFIX
+			+ "ZWEITE_SCHNELLMELDUNG_MUSSFEHLER_BESTAETIGEN";
+
+	/**
+	 * -
+	 */
+	String SECURITY_RECHT_EXPORTSEITE_ANZEIGEN = SECURITY_RECHT_PREFIX
+			+ "EXPORTSEITE_ANZEIGEN";
+
+	// ////////////////////
+	// Plausi
+	// ////////////////////
+	//
+	//
+	/**
+	 * Fehlende Meldung
+	 */
+	String VALIDIERUNG_MELDUNG_NICHT_DEFINIERT_FUER = "Meldung nicht definiert für ";
+
+	// ////////////////////
+	// Plausi
+	// ////////////////////
+	//
+	//
+	/**
+	 * Abweichung Stimmberechtigte
+	 */
+	int PLAUSI_ABWEICHUNG_STIMMBERECHTIGTE = 15;
+
+	/**
+	 * Untergrenze Wahlbeteiligung
+	 */
+	int PLAUSI_WAHLBETEILIGUNG_UNTERGRENZE = 40;
+
+	/**
+	 * Obergrenze Wahlbeteiligung
+	 */
+	int PLAUSI_WAHLBETEILIGUNG_OBERGRENZE = 90;
+
+	/**
+	 * Abweichung Anteil ungültige Erststimmen
+	 */
+	int PLAUSI_ABWEICHUNG_ANTEIL_UNGUELTIGE_ERSTSTIMMEN = 5;
+
+	/**
+	 * Abweichung Anteil ungültige Zweitstimmen
+	 */
+	int PLAUSI_ABWEICHUNG_ANTEIL_UNGUELTIGE_ZWEITSTIMMEN = 5;
+
+	/**
+	 * Abweichung Summe Erst-/Zweitstimmen
+	 */
+	int PLAUSI_ABWEICHUNG_SUMME_ERST_ZWEITSTIMMEN = 3;
+
+	/**
+	 * Abweichung Anteil verlorengegangener Erststimmen
+	 */
+	int PLAUSI_ABWEICHUNG_ANTEIL_VERLORENGEGANGENE_ERSTSTIMMEN = 15;
+
+	/**
+	 * Abweichung Anteil verlorengegangener Zweitstimmen
+	 */
+	int PLAUSI_ABWEICHUNG_ANTEIL_VERLORENGEGANGENE_ZWEITSTIMMEN = 15;
+
+	// ////////////////////
+	// Benutzer
+	// ////////////////////
+	//
+	//
+	/**
+	 * Benutzername Min
+	 */
+	int BENUTZER_BENUTZERNAME_MIN = 1;
+
+	/**
+	 * Benutzername Max
+	 */
+	int BENUTZER_BENUTZERNAME_MAX = 45;
+
+	/**
+	 * Vorname Min
+	 */
+	int BENUTZER_VORNAME_MIN = 1;
+
+	/**
+	 * Vorname Max
+	 */
+	int BENUTZER_VORNAME_MAX = 45;
+
+	/**
+	 * Nachname Min
+	 */
+	int BENUTZER_NACHNAME_MIN = 1;
+
+	/**
+	 * Nachname Max
+	 */
+	int BENUTZER_NACHNAME_MAX = 45;
+
+	/**
+	 * Telefon Min
+	 */
+	int BENUTZER_TELEFON_MIN = 1;
+
+	/**
+	 * Telefon Max
+	 */
+	int BENUTZER_TELEFON_MAX = 45;
+
+	/**
+	 * Email Min
+	 */
+	int BENUTZER_EMAILADRESSE_MIN = 1;
+
+	/**
+	 * Email Max
+	 */
+	int BENUTZER_EMAILADRESSE_MAX = 45;
+
+	/**
+	 * Passwort Min
+	 */
+	int BENUTZER_PASSWORT_MIN = 8;
+
+	/**
+	 * Passwort Max
+	 */
+	int BENUTZER_PASSWORT_MAX = 255;
+
+	// ////////////////////
+	// Bewerber
+	// ////////////////////
+	//
+	//
+	/**
+	 * Nummer Min
+	 */
+	int BEWERBER_NUMMER_MIN = 1;
+
+	/**
+	 * Nummer Max
+	 */
+	int BEWERBER_NUMMER_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Titel Min
+	 */
+	int BEWERBER_TITEL_MIN = 0;
+
+	/**
+	 * Titel Max
+	 */
+	int BEWERBER_TITEL_MAX = 20;
+
+	/**
+	 * Familienname Min
+	 */
+	int BEWERBER_FAMILIENNAME_MIN = 1;
+
+	/**
+	 * Familienname Max
+	 */
+	int BEWERBER_FAMILIENNAME_MAX = 45;
+
+	/**
+	 * Familienname Min
+	 */
+	int BEWERBER_VORNAME_MIN = 1;
+
+	/**
+	 * Familienname Max
+	 */
+	int BEWERBER_VORNAME_MAX = 45;
+
+	/**
+	 * Zusatz Min
+	 */
+	int BEWERBER_ZUSATZ_MIN = 0;
+
+	/**
+	 * Zusatz Max
+	 */
+	int BEWERBER_ZUSATZ_MAX = 45;
+
+	/**
+	 * Geburtsjahr Min
+	 */
+	int BEWERBER_GEBURTSJAHR_MIN = 1900;
+
+	/**
+	 * Geburtsjahr Max
+	 */
+	int BEWERBER_GEBURTSJAHR_MAX = 2050;
+
+	/**
+	 * Strasse/Hausnummer Min
+	 */
+	int BEWERBER_STRASSEHAUSNUMMER_MIN = 0;
+
+	/**
+	 * Strasse/Hausnummer Max
+	 */
+	int BEWERBER_STRASSEHAUSNUMMER_MAX = 255;
+
+	/**
+	 * PLZ Min
+	 */
+	int BEWERBER_POSTLEITZAHL_MIN = 0;
+
+	/**
+	 * PLZ Max
+	 */
+	int BEWERBER_POSTLEITZAHL_MAX = 5;
+
+	/**
+	 * Wohnort Min
+	 */
+	int BEWERBER_WOHNORT_MIN = 0;
+
+	/**
+	 * Wohnort Max
+	 */
+	int BEWERBER_WOHNORT_MAX = 45;
+
+	/**
+	 * Rangnummer Min
+	 */
+	int BEWERBER_RANGNUMMER_MIN = 1;
+
+	/**
+	 * Rangnummer Max
+	 */
+	int BEWERBER_RANGNUMMER_MAX = Integer.MAX_VALUE;
+
+	// ////////////////////
+	// Wahl
+	// ////////////////////
+	//
+	//
+	/**
+	 * Wahltext Min
+	 */
+	int WAHL_WAHLTEXT_MIN = 0;
+
+	/**
+	 * Wahltext Max
+	 */
+	int WAHL_WAHLTEXT_MAX = 45;
+
+	/**
+	 * Land Min
+	 */
+	int WAHL_LAND_MIN = 1;
+
+	/**
+	 * Land Max
+	 */
+	int WAHL_LAND_MAX = 255;
+
+	/**
+	 * LandNr Min
+	 */
+	int WAHL_LAND_NR_MIN = 1;
+
+	/**
+	 * LandNr Max
+	 */
+	int WAHL_LAND_NR_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Sperrdauer Min
+	 */
+	int WAHL_SPERRDAUER_MIN = 1;
+
+	/**
+	 * Sperrdauer Max
+	 */
+	int WAHL_SPERRDAUER_MAX = 99;
+
+	/**
+	 * Sperrdauer default
+	 */
+	int WAHL_SPERRDAUER_DEFAULT = 10;
+
+	/**
+	 * Abweichung Stimmberechtigte Min
+	 */
+	int WAHL_ABWEICHUNG_STIMMBERECHTIGTE_MIN = 1;
+
+	/**
+	 * Abweichung Stimmberechtigte Max
+	 */
+	int WAHL_ABWEICHUNG_STIMMBERECHTIGTE_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Wahlbeteiligung Obergrenze Min
+	 */
+	int WAHL_WAHLBETEILIGUNG_UNTERGRENZE_MIN = 1;
+
+	/**
+	 * Wahlbeteiligung Obergrenze Max
+	 */
+	int WAHL_WAHLBETEILIGUNG_UNTERGRENZE_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Wahlbeteiligung Untergrenze Min
+	 */
+	int WAHL_WAHLBETEILIGUNG_OBERGRENZE_MIN = 1;
+
+	/**
+	 * Wahlbeteiligung Untergrenze Max
+	 */
+	int WAHL_WAHLBETEILIGUNG_OBERGRENZE_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Abweichung Anteil Ungültiger Erstimmen Min
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_UNGUELTIGER_ERSTSTIMMEN_MIN = 1;
+
+	/**
+	 * Abweichung Anteil Ungültiger Erstimmen Max
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_UNGUELTIGER_ERSTSTIMMEN_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Abweichung Anteil Ungültiger Zweitimmen Min
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_UNGUELTIGER_ZWEITSTIMMEN_MIN = 1;
+
+	/**
+	 * Abweichung Anteil Ungültiger Zweitimmen Max
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_UNGUELTIGER_ZWEITSTIMMEN_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Abweichung Summe Erst-Zweitstimmen Min
+	 */
+	int WAHL_ABWEICHUNG_SUMME_ERST_ZWEITSTIMMEN_MIN = 1;
+
+	/**
+	 * Abweichung Summe Erst-Zweitstimmen Max
+	 */
+	int WAHL_ABWEICHUNG_SUMME_ERST_ZWEITSTIMMEN_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Abweichung Anteil verlorgengenangener Erststimmen Min
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_VERLORENGEGANGENER_ERSTSTIMMEN_MIN = 1;
+
+	/**
+	 * Abweichung Anteil verlorgengenangener Erststimmen Max
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_VERLORENGEGANGENER_ERSTSTIMMEN_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Abweichung Anteil verlorgengenangener Zweitstimmen Min
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_VERLORENGEGANGENER_ZWEITSTIMMEN_MIN = 1;
+
+	/**
+	 * Abweichung Anteil verlorgengenangener Zweitstimmen Max
+	 */
+	int WAHL_ABWEICHUNG_ANTEIL_VERLORENGEGANGENER_ZWEITSTIMMEN_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Anzahl Korrekturen bis externer Benutzer inaktiv
+	 */
+	int WAHL_ANZAHL_KORREKTUREN_MIN = 2;
+
+	/**
+	 * Anzahl Korrekturen bis externer Benutzer inaktiv Max
+	 */
+	int WAHL_ANZAHL_KORREKTUREN_MAX = 500;
+
+	/**
+	 * Anzahl Korrekturen bis externer Benutzer inaktiv Max
+	 */
+	int WAHL_ANZAHL_KORREKTUREN_DEFAULT = 15;
+
+	// ////////////////////
+	// Rolle
+	// ////////////////////
+	//
+	//
+	/**
+	 * Bezeichnung Min
+	 */
+	int ROLLE_BEZEICHNUNG_MIN = 1;
+
+	/**
+	 * Bezeichnung Max
+	 */
+	int ROLLE_BEZEICHNUNG_MAX = 255;
+
+	/**
+	 * Name Min
+	 */
+	int ROLLE_NAME_MIN = 1;
+
+	/**
+	 * Name Max
+	 */
+	int ROLLE_NAME_MAX = 50;
+
+	// ////////////////////
+	// Recht
+	// ////////////////////
+	//
+	//
+	/**
+	 * Name Min
+	 */
+	int RECHT_NAME_MIN = 1;
+
+	/**
+	 * Name Max
+	 */
+	int RECHT_NAME_MAX = 50;
+
+	/**
+	 * Bezeichnung Min
+	 */
+	int RECHT_BEZEICHNUNG_MIN = 1;
+
+	/**
+	 * Bezeichnung Max
+	 */
+	int RECHT_BEZEICHNUNG_MAX = 255;
+
+	// ////////////////////
+	// Wahlkreis
+	// ////////////////////
+	//
+	//
+	/**
+	 * Wahlkreisname Min
+	 */
+	int WAHLKREIS_WAHLKREISNAME_MIN = 1;
+
+	/**
+	 * Wahlkreisname Max
+	 */
+	int WAHLKREIS_WAHLKREISNAME_MAX = 45;
+
+	/**
+	 * Wahlkreisname kurz Max
+	 */
+	int WAHLKREIS_WAHLKREISNAME_KURZ_MIN = 1;
+
+	/**
+	 * Wahlkreisname kurz Max
+	 */
+	int WAHLKREIS_WAHLKREISNAME_KURZ_MAX = 10;
+
+	/**
+	 * Wahlkreisnummer Min
+	 */
+	int WAHLKREIS_WAHLKREISNUMMER_MIN = 1;
+
+	/**
+	 * Wahlkreisnummer Max
+	 */
+	int WAHLKREIS_WAHLKREISNUMMER_MAX = 7;
+
+	/**
+	 * Zahl der Sitze Direkt Min
+	 */
+	int WAHLKREIS_ZAHL_DER_SITZE_DIREKT_MIN = 1;
+
+	/**
+	 * Zahl der Sitze Direkt Max
+	 */
+	int WAHLKREIS_ZAHL_DER_SITZE_DIREKT_MAX = Integer.MAX_VALUE;
+
+	/**
+	 * Zahl der Sitze Liste Min
+	 */
+	int WAHLKREIS_ZAHL_DER_SITZE_LISTE_MIN = 1;
+
+	/**
+	 * Zahl der Sitze Liste Max
+	 */
+	int WAHLKREIS_ZAHL_DER_SITZE_LISTE_MAX = Integer.MAX_VALUE;
+
+	// ////////////////////
+	// Wahlvorschlag
+	// ////////////////////
+	//
+	//
+	/**
+	 * Name kurz Min
+	 */
+	int WAHLVORSCHLAG_NAME_KURZ_MIN = 0;
+
+	/**
+	 * Name kurz Max
+	 */
+	int WAHLVORSCHLAG_NAME_KURZ_MAX = 45;
+
+	/**
+	 * Name lang Min
+	 */
+	int WAHLVORSCHLAG_NAME_LANG_MIN = 1;
+
+	/**
+	 * Name lang Max
+	 */
+	int WAHLVORSCHLAG_NAME_LANG_MAX = 255;
+
+	/**
+	 * WKVN Min
+	 */
+	int WAHLVORSCHLAG_WKVN_LAND_MIN = 1;
+
+	/**
+	 * WKVN Max
+	 */
+	int WAHLVORSCHLAG_WKVN_LAND_MAX = 50;
+
+	/**
+	 * Fehlerabweichung Erststimmen Min
+	 */
+	int WAHLVORSCHLAG_FEHLER_ABWEICHUNG_ERSTSTIMMEN_MIN = 1;
+
+	/**
+	 * Fehlerabweichung Erststimmen Max
+	 */
+	int WAHLVORSCHLAG_FEHLER_ABWEICHUNG_ERSTSTIMMEN_MAX = 100;
+
+	/**
+	 * Fehlerabweichung Zweitstimmen Min
+	 */
+	int WAHLVORSCHLAG_FEHLER_ABWEICHUNG_ZWEITSTIMMEN_MIN = 1;
+
+	/**
+	 * Fehlerabweichung Zweitstimmen Max
+	 */
+	int WAHLVORSCHLAG_FEHLER_ABWEICHUNG_ZWEITSTIMMEN_MAX = 100;
+
+	// ////////////////////
+	// Wahlkreisvorschlag
+	// ////////////////////
+	//
+	//
+	/**
+	 * WKVNRWK Min
+	 */
+	int WAHLKREISVORSCHLAG_WKVNRWK_MIN = 0;
+
+	/**
+	 * WKVNRWK Max
+	 */
+	int WAHLKREISVORSCHLAG_WKVNRWK_MAX = Integer.MAX_VALUE;
+
+	// ////////////////////
+	// Stimmkreis
+	// ////////////////////
+	//
+	//
+	/**
+	 * Name Min
+	 */
+	int STIMMKREIS_NAME_MIN = 1;
+
+	/**
+	 * Name MAX
+	 */
+	int STIMMKREIS_NAME_MAX = 50;
+
+	/**
+	 * Name Teil MAX
+	 */
+	int STIMMKREIS_NAME_TEIL_MIN = 0;
+
+	/**
+	 * Name Teil MAX
+	 */
+	int STIMMKREIS_NAME_TEIL_MAX = 9;
+
+	/**
+	 * Nummer Min
+	 */
+	int STIMMKREIS_NUMMER_MIN = 100;
+
+	/**
+	 * Nummer MAX
+	 */
+	int STIMMKREIS_NUMMER_MAX = 999;
+
+	/**
+	 * Stimmberechtigte geschätzt Min
+	 */
+	int STIMMKREIS_STIMMBERECHTIGTE_GESCHAETZT_MIN = 1;
+
+	/**
+	 * Stimmberechtigte geschätzt MAX
+	 */
+	int STIMMKREIS_STIMMBERECHTIGTE_GESCHAETZT_MAX = Integer.MAX_VALUE;
+
+	// ////////////////////
+	// Sitzeberechnung-Fussnote
+	// ////////////////////
+	//
+	//
+	int SITZEBERECHNUNG_NR_MIN = 0;
+
+	int SITZEBERECHNUNG_FUSSNOTE_TEXT_MIN = 0;
+
+	int SITZEBERECHNUNG_FUSSNOTE_TEXT_MAX = 2000;
+
+	int SITZEBERECHNUNG_FUSSNOTE_NAME_MIN = 1;
+
+	int SITZEBERECHNUNG_FUSSNOTE_NAME_MAX = 100;
+
+	// ////////////////////
+	// Erste Schnellmeldung
+	// ////////////////////
+	//
+	//
+	/**
+	 * Stimmberechtige Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_STIMMBERECHTIGTE_MIN = 0;
+
+	/**
+	 * Stimmberechtige Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_STIMMBERECHTIGTE_MAX = 1000000;
+
+	/**
+	 * Wähler Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_WAEHLER_MIN = 0;
+
+	/**
+	 * Wähler Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_WAEHLER_MAX = 1000000;
+
+	/**
+	 * Erstimmen Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_ERSTSTIMMEN_MIN = 0;
+
+	/**
+	 * Erstimmen Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_ERSTSTIMMEN_MAX = 1000000;
+
+	/**
+	 * Zweitstimmen Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_ZWEITSTIMMEN_MIN = 0;
+
+	/**
+	 * Zweitstimmen Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_ZWEITSTIMMEN_MAX = 1000000;
+
+	/**
+	 * gültige Erststimmen Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_GUELTIGE_ERSTSTIMMEN_MIN = 0;
+
+	/**
+	 * gültige Erststimmen Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_GUELTIGE_ERSTSTIMMEN_MAX = 1000000;
+
+	/**
+	 * gültige Zweitstimmen Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_GUELTIGE_ZWEITSTIMMEN_MIN = 0;
+
+	/**
+	 * gültige Zweitstimmen Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_GUELTIGE_ZWEITSTIMMEN_MAX = 1000000;
+
+	/**
+	 * ungültige Erststimmen Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_UNGUELTIGE_ERSTSTIMMEN_MIN = 0;
+
+	/**
+	 * ungültige Erststimmen Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_UNGUELTIGE_ERSTSTIMMEN_MAX = 1000000;
+
+	/**
+	 * ungültige Zweitstimmen Min
+	 */
+	int ERSTE_SCHNELLMELDUNG_UNGUELTIGE_ZWEITSTIMMEN_MIN = 0;
+
+	/**
+	 * ungültige Zweitstimmen Max
+	 */
+	int ERSTE_SCHNELLMELDUNG_UNGUELTIGE_ZWEITSTIMMEN_MAX = 1000000;
+
+	// ////////////////////
+	// Zweite Schnellmeldung
+	// ////////////////////
+	//
+	//
+	/**
+	 * Erstimmen Min
+	 */
+	int ZWEITE_SCHNELLMELDUNG_STIMMEN_MIN = 0;
+
+	/**
+	 * Erstimmen Max
+	 */
+	int ZWEITE_SCHNELLMELDUNG_STIMMEN_MAX = 1000000;
+
+	/**
+	 * gültige Erststimmen Min
+	 */
+	int ZWEITE_SCHNELLMELDUNG_STIMMEN_SUMME_MIN = 0;
+
+	/**
+	 * gültige Erststimmen Max
+	 */
+	int ZWEITE_SCHNELLMELDUNG_STIMMEN_SUMME_MAX = 1000000;
+
+}

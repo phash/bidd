@@ -1,4 +1,4 @@
-package org.wickedsource;
+package de.mroedig.bidd;
 
 import org.apache.wicket.authroles.authentication.AbstractAuthenticatedWebSession;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
@@ -34,6 +34,7 @@ public class WicketApplication extends AuthenticatedWebApplication {
 		mountPage("home", HomePage.class);
 		mountPage("secure", SecurePage.class);
 		mountPage("secure/extreme", ExtremeSecurePage.class);
+
 	}
 
 	@Override
