@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import de.mroedig.bidd.dao.BenutzerDao;
 import de.mroedig.bidd.dao.RollenDao;
 import de.mroedig.bidd.entities.Benutzer;
+import de.mroedig.bidd.entities.Role;
 import de.mroedig.bidd.utils.BidsPasswordEncoder;
 import de.mroedig.exceptions.ModelException;
 
@@ -41,6 +42,7 @@ public class BenutzerServiceImpl implements BenutzerService {
 	}
 
 	@Override
+	@Transactional
 	public boolean erstelleNeuenBenutzer(Benutzer pBenutzer) {
 		Benutzer gefundenerBenutzer = benutzerDao.findByUserName(pBenutzer
 				.getBenutzername());
@@ -59,7 +61,7 @@ public class BenutzerServiceImpl implements BenutzerService {
 			neuerBenutzer.setPasswort(encoder.encodePassword(
 					pBenutzer.getPasswort(), pBenutzer.getBenutzername()));
 			neuerBenutzer.getRollen().add(rollenDao.getStandardRolle());
-
+			neuerBenutzer.setAktiv(true);
 			return benutzerDao.persistiere(neuerBenutzer) != null;
 		} else {
 			throw new ModelException("Benutzerangaben invalide");
@@ -70,5 +72,10 @@ public class BenutzerServiceImpl implements BenutzerService {
 	@Override
 	public Benutzer getBenutzerByName(String username) {
 		return benutzerDao.findByUserName(username);
+	}
+
+	@Override
+	public Role getUserRole() {
+		return rollenDao.getStandardRolle();
 	}
 }

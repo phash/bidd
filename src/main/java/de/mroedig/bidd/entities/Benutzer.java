@@ -41,7 +41,7 @@ public class Benutzer extends BasisEntity<Long> implements IClusterable,
 	private String passwort;
 
 	@NotNull
-	private Boolean aktiv;
+	private Boolean aktiv = Boolean.FALSE;
 
 	@Email
 	private String mail;
@@ -50,8 +50,21 @@ public class Benutzer extends BasisEntity<Long> implements IClusterable,
 	@Transient
 	private Collection<GrantedAuthority> authorities = new HashSet<GrantedAuthority>(); // NOPMD
 
-	@OneToMany
+	/**
+	 * die vom Benutzer abgegebenen Gebote
+	 */
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "benutzer")
 	private Set<Gebot> gebote = new HashSet<Gebot>(32);
+
+	/**
+	 * Die vom Benutzer gestarteten Auktionen
+	 */
+	@OneToMany
+	private final Set<Auction> auktionen = new HashSet<Auction>(32);
+
+	public Set<Auction> getAuktionen() {
+		return auktionen;
+	}
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "benutzer_role", joinColumns = { @JoinColumn(name = "benutzer_ident", referencedColumnName = "ident") }, inverseJoinColumns = { @JoinColumn(name = "role_ident", referencedColumnName = "ident") })
@@ -85,6 +98,7 @@ public class Benutzer extends BasisEntity<Long> implements IClusterable,
 		this.benutzername = benutzername;
 		this.passwort = passwort;
 		this.mail = mail;
+		aktiv = true;
 	}
 
 	public Set<Gebot> getGebote() {

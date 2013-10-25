@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>GameBids</title>
+<link
+	href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
+	rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"
+	title="Stylesheet" />
+</head>
+<body>
+	<div id="hd">
+		<div id="logo">
+			<h1>GameAuctions</h1>
+		</div>
+	</div>
+	<div id="bd">
+		<h2>Login</h2>
+			<div wicket:id="feedback"/>
+		<form wicket:id="registerForm">
+	
+			<p>
+				Username: <input type="text" wicket:id="benutzername"/>
+			</p>
+			<p>
+                EMail Adresse: <input type="email" wicket:id="mail"/>
+            </p>
+            <p>
+                Passwort: <input type="password" wicket:id="passwort"/>
+            </p>    
+			<p>
+				Passwort wiederholen: <input type="password" wicket:id="passwort2"/>
+			</p>		
+			<input type="submit" value="Registrieren"/>
+		</form>
+
+	</div>
+	<div id="ft"></div>
+</body>
+</html>

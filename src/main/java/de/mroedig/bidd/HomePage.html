@@ -22,6 +22,9 @@
 			Anyone can view this page, but posting to an Account requires <a
 				href="login">login</a> and must be authorized. Below are some users
 			to try posting to Accounts with.
+			
+			Bitte  <a
+                href="register">registrieren</a> 
 		</p>
 		<ul>
 			<li>rod/koala - can post to any Account</li>
@@ -32,7 +35,7 @@
 
 		<div wicket:id="feedback" />
 
-		
+
 
 
 		<table>
@@ -43,6 +46,9 @@
 				<th>waehrung</th>
 				<th>startZeitpunkt</th>
 				<th>laufzeitInSekunden</th>
+				<th>spiel</th>
+				<th>spielServer</th>
+				<th>besitzer</th>
 			</tr>
 			<tr wicket:id="auctionList">
 				<td wicket:id="ident" />
@@ -51,18 +57,21 @@
 				<td wicket:id="waehrung" />
 				<td wicket:id="startZeitpunkt" />
 				<td wicket:id="laufzeitInSekunden" />
+				<td wicket:id="spiel" />
+				<td wicket:id="spielServer" />
+				<td wicket:id="besitzer" /> 
 
 
 			</tr>
 		</table>
 
 		<p>
-			<a href="/secure">Secure Page</a> (accessible for all authenticated
+			<a href="secure">Secure Page</a> (accessible for all authenticated
 			users)
 		</p>
 
 		<p>
-			<a href="/secure/extreme">Extreme Secure Page</a> (accessible only
+			<a href="secure/extreme">Extreme Secure Page</a> (accessible only
 			for rod/koala)
 		</p>
 

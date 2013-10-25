@@ -13,6 +13,10 @@ import de.mroedig.bidd.entities.Benutzer;
 import de.mroedig.bidd.services.BenutzerService;
 
 public class RegistrationForm extends Form<Void> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2517054260996105376L;
 	@SpringBean
 	private BenutzerService benutzerService;
 
@@ -25,6 +29,7 @@ public class RegistrationForm extends Form<Void> {
 
 	@Override
 	protected void onInitialize() {
+		super.onInitialize();
 
 		add(new TextField<String>("benutzername", new PropertyModel<String>(
 				properties, "benutzername")));

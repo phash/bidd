@@ -1,6 +1,7 @@
 package de.mroedig.bidd.services;
 
 import de.mroedig.bidd.entities.Benutzer;
+import de.mroedig.bidd.entities.Role;
 
 public interface BenutzerService {
 
@@ -11,5 +12,7 @@ public interface BenutzerService {
 	boolean erstelleNeuenBenutzer(Benutzer neuerNutzer);
 
 	Benutzer getBenutzerByName(String string);
+
+	Role getUserRole();
 
 }

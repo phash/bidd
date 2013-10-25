@@ -16,6 +16,7 @@
 		<intercept-url pattern="/" access="permitAll" />
 		<intercept-url pattern="/home" access="permitAll" />
 		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/register" access="!isAuthenticated()" />
 		<intercept-url pattern="/**/*.png" access="permitAll" />
 		<intercept-url pattern="/**/*.css" access="permitAll" />
 		<intercept-url pattern="/secure/extreme/**" access="hasRole('supervisor')" />

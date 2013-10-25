@@ -58,6 +58,12 @@ public class HomePage extends WebPage {
 				item.add(new Label("waehrung"));
 				item.add(new Label("startZeitpunkt"));
 				item.add(new Label("laufzeitInSekunden"));
+				item.add(new Label("spiel", item.getModelObject().getSpiel()
+						.getSpielname()));
+				item.add(new Label("spielServer", item.getModelObject()
+						.getSpielServer().getBezeichnung()));
+				item.add(new Label("besitzer", item.getModelObject()
+						.getBesitzer().getBenutzername()));
 
 			}
 

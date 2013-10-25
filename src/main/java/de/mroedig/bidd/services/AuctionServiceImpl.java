@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import de.mroedig.bidd.dao.AuctionDao;
 import de.mroedig.bidd.dao.BenutzerDao;
 import de.mroedig.bidd.entities.Auction;
+import de.mroedig.bidd.entities.Gebot;
 
 @Service
 public class AuctionServiceImpl implements AuctionService {
@@ -32,6 +33,12 @@ public class AuctionServiceImpl implements AuctionService {
 	@Transactional
 	public List<? extends Auction> getAllAuctions() {
 		return auctionDao.getAll();
+	}
+
+	@Override
+	@Transactional
+	public void erstelleGebot(Gebot pNeuesGebot) {
+
 	}
 
 }
