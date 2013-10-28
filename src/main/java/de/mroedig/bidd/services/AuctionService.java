@@ -13,4 +13,7 @@ public interface AuctionService {
 
 	void erstelleGebot(Gebot gebot);
 
+
+	Auction getAuctionById(Long pId);
+
 }

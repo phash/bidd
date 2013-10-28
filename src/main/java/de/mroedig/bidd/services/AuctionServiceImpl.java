@@ -41,4 +41,10 @@ public class AuctionServiceImpl implements AuctionService {
 
 	}
 
+	@Override
+	@Transactional
+	public Auction getAuctionById(Long pId) {
+		return auctionDao.getById(pId);
+	}
+
 }

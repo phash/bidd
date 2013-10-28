@@ -15,4 +15,11 @@ public class RollenDaoImpl extends BasisDaoImpl<Role> implements RollenDao {
 		myCriteria.add(Restrictions.eq("springSecurityRoleName", "USER"));
 		return (Role) myCriteria.uniqueResult();
 	}
+
+	@Override
+	public void flushMe() {
+		getMySession().flush();
+		
+		
+	}
 }

@@ -6,4 +6,6 @@ public interface RollenDao extends BasisDao<Role> {
 
 	Role getStandardRolle();
 
+	void flushMe();
+
 }

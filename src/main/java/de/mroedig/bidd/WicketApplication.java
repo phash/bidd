@@ -35,6 +35,7 @@ public class WicketApplication extends AuthenticatedWebApplication {
 		mountPage("register", RegisterPage.class);
 		mountPage("secure", SecurePage.class);
 		mountPage("secure/extreme", ExtremeSecurePage.class);
+		mountPage("details/auction.htm", DetailSeite.class);
 
 	}
 

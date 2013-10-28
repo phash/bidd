@@ -31,5 +31,11 @@ public class BenutzerDaoImpl extends BasisDaoImpl<Benutzer> implements
 
 		return (Benutzer) myCriteria.uniqueResult();
 	}
+	
+	@Override
+	public void flushMe() {
+		getMySession().flush();
+		
+	}
 
 }

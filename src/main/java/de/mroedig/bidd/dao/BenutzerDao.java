@@ -8,4 +8,6 @@ public interface BenutzerDao extends BasisDao<Benutzer> {
 
 	Benutzer findByUserName(String username);
 
+	void flushMe();
+
 }
