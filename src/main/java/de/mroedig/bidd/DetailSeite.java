@@ -28,19 +28,24 @@ public class DetailSeite extends WebPage {
 			item = auctionService.getAuctionById(name.toLong());
 
 		}
+		
 		createContent();
 	}
+	
+	
 
 	public DetailSeite() {
-		super();
-		Injector.get().inject(this);
+		 this(null);
+//		super();
+//		
+//		Injector.get().inject(this);
 	}
 
-	public DetailSeite(Auction auktion) {
-		Injector.get().inject(this);
-		item = auktion;
-		createContent();
-	}
+//	public DetailSeite(Auction auktion) {
+//		Injector.get().inject(this);
+//		item = auktion;
+//		createContent();
+//	}
 
 	/**
 	 * 
@@ -60,20 +65,8 @@ public class DetailSeite extends WebPage {
 
 	private void createContent() {
 		super.onInitialize();
-		add(new FeedbackPanel("feedback"));
-		add(new Link<Void>("logoutLink") {
-
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 6050395684254918792L;
-
-			@Override
-			public void onClick() {
-				getSession().invalidate();
-			}
-
-		});
+		setStatelessHint(true);
+	
 
 		add(new Label("ident", this.getItem().getIdent()));
 		add(new Label("auktionsGegenstand", this.getItem()
