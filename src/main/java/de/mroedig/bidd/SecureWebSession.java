@@ -16,9 +16,16 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import de.mroedig.bidd.entities.Benutzer;
 import de.mroedig.bidd.entities.Role;
+import de.mroedig.bidd.services.BenutzerService;
 
 public class SecureWebSession extends AuthenticatedWebSession {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1047035309585291875L;
 
 	private static Logger logger = Logger.getLogger(SecureWebSession.class);
 
@@ -26,6 +33,11 @@ public class SecureWebSession extends AuthenticatedWebSession {
 
 	@SpringBean(name = "authenticationManager")
 	private AuthenticationManager authenticationManager;
+
+	@SpringBean
+	private BenutzerService benutzerService;
+
+	private Benutzer angemeldeterBenutzer;
 
 	public SecureWebSession(Request request) {
 		super(request);
@@ -44,11 +56,17 @@ public class SecureWebSession extends AuthenticatedWebSession {
 			SecurityContextHolder.getContext()
 					.setAuthentication(authentication);
 			authenticated = authentication.isAuthenticated();
+
+			if (authenticated) {
+				angemeldeterBenutzer = benutzerService
+						.getBenutzerByName(username);
+			}
 		} catch (AuthenticationException e) {
 			logger.warn(String.format("User '%s' failed to login. Reason: %s",
 					username, e.getMessage()));
 			authenticated = false;
 		}
+
 		return authenticated;
 
 	}
@@ -75,4 +93,7 @@ public class SecureWebSession extends AuthenticatedWebSession {
 		return getRoles().hasRole(role.getSpringSecurityRoleName());
 	}
 
+	public String getUserName() {
+		return angemeldeterBenutzer.getBenutzername();
+	}
 }

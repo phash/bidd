@@ -2,7 +2,6 @@ package de.mroedig.bidd.services;
 
 import java.util.Date;
 
-import org.omg.CORBA.DATA_CONVERSION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +13,7 @@ import de.mroedig.bidd.entities.Benutzer;
 import de.mroedig.bidd.entities.Role;
 import de.mroedig.bidd.entities.Spiel;
 import de.mroedig.bidd.entities.SpielServer;
+import de.mroedig.bidd.sec.RollenImSystem;
 
 @Service
 public class InitServiceImpl implements InitService {
@@ -28,7 +28,7 @@ public class InitServiceImpl implements InitService {
 
 	@Autowired
 	private RollenDao rollenDao;
-	
+
 	@Autowired
 	private BenutzerDao benutzerDao;
 
@@ -36,24 +36,24 @@ public class InitServiceImpl implements InitService {
 	@Transactional
 	public void initAll() {
 
-//		 createRollen();
-//		 createUser();
-//		 createSpiel();
-//		 createSpielServer();
-		 createAuction();
+		// createRollen();
+		// createUser();
+		// createSpiel();
+		// createSpielServer();
+		createAuction();
 
 	}
 
 	@Transactional
 	private void createAuction() {
 		Date d = new Date();
-		
+
 		Auction auct = new Auction();
 		auct.setBesitzer(benutzerService.getBenutzerByName("klaus"));
 		auct.setAuktionsGegenstand("TestGGS" + d.getSeconds());
 		auct.setLaufzeitInSekunden(123 * d.getSeconds());
 		auct.setWaehrung("GM");
-		auct.setPreisInCent(5 *d.getSeconds());
+		auct.setPreisInCent(5 * d.getSeconds());
 		auct.setSpiel(spielService.getSpielByName("DSO"));
 		auct.setSpielServer(spielService.getSpielServerBySpielAndName(
 				auct.getSpiel(), "Welt 2"));
@@ -88,10 +88,11 @@ public class InitServiceImpl implements InitService {
 
 	@Transactional
 	private void createRollen() {
-		rollenDao.persistiere(new Role("USER"));
-		rollenDao.persistiere(new Role("ADMIN"));
+
+		for (RollenImSystem rolle : RollenImSystem.values()) {
+			rollenDao.persistiere(new Role(rolle.name()));
+		}
 		rollenDao.flushMe();
 
 	}
-
 }

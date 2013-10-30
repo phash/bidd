@@ -4,7 +4,6 @@ import org.apache.wicket.injection.Injector;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
-import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -15,6 +14,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import de.mroedig.bidd.entities.Auction;
+import de.mroedig.bidd.sec.LogoutLink;
 import de.mroedig.bidd.services.AuctionService;
 import de.mroedig.bidd.services.InitService;
 
@@ -35,20 +35,40 @@ public class HomePage extends WebPage {
 
 		add(new FeedbackPanel("feedback"));
 
-		add(new Link<Void>("logoutLink") {
+		add(new LogoutLink("logoutLink"));
+
+		add(new Label("zeigDichN",
+				"DAS HIER IST NUR DA, WENN DU NICHT ANGEMELDET BIST") {
+			/**
+					 * 
+					 */
+			private static final long serialVersionUID = 9074375551076024958L;
+
+			@Override
+			public boolean isVisible() {
+				return !((SecureWebSession) getSession()).isSignedIn();
+			}
+		});
+		Model<String> labelModel = Model
+				.of("DAS HIER IST NUR DA, WENN DU ANGEMELDET BIST");
+		Label msg = new Label("zeigDichA", labelModel) {
 
 			/**
 			 * 
 			 */
-			private static final long serialVersionUID = 6050395684254918792L;
+			private static final long serialVersionUID = 6394262130538247553L;
 
 			@Override
-			public void onClick() {
-				getSession().invalidate();
+			public boolean isVisible() {
+				return ((SecureWebSession) getSession()).isSignedIn();
 			}
 
-		});
-
+		};
+		if (msg.isVisible()) {
+			labelModel.setObject("HALLO "
+					+ ((SecureWebSession) getSession()).getUserName());
+		}
+		add(msg);
 		add(new ListView<Auction>("auctionList",
 				auctionService.getAllAuctions()) {
 
@@ -71,14 +91,12 @@ public class HomePage extends WebPage {
 						.getSpielServer().getBezeichnung()));
 				item.add(new Label("besitzer", item.getModelObject()
 						.getBesitzer().getBenutzername()));
-			
-			
-				
-				
+
 				PageParameters pars = new PageParameters();
 				pars.add("ident", item.getModelObject().getIdent());
-				item.add(new BookmarkablePageLink("details", DetailSeite.class, pars));
-				             
+				item.add(new BookmarkablePageLink<Void>("details",
+						DetailSeite.class, pars));
+
 			}
 
 			@Override

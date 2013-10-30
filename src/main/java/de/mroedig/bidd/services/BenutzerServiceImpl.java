@@ -70,11 +70,13 @@ public class BenutzerServiceImpl implements BenutzerService {
 	}
 
 	@Override
+	@Transactional
 	public Benutzer getBenutzerByName(String username) {
 		return benutzerDao.findByUserName(username);
 	}
 
 	@Override
+	@Transactional
 	public Role getUserRole() {
 		return rollenDao.getStandardRolle();
 	}
