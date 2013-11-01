@@ -36,10 +36,10 @@ public class InitServiceImpl implements InitService {
 	@Transactional
 	public void initAll() {
 
-		// createRollen();
-		// createUser();
-		// createSpiel();
-		// createSpielServer();
+//		 createRollen();
+//		 createUser();
+//		 createSpiel();
+//		createSpielServer();
 		createAuction();
 
 	}
